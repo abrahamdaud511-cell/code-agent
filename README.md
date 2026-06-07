@@ -357,9 +357,14 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-Built with ❤️ for developers who refuse to be locked into a single AI provider.
-BY : ABRAHAM DAUD
-##IG : 
-**@abraham_daud01** 
-##Gmail : 
-**abrahamdaud511@gmail.com**
+Built with ❤️ for developers who refuse to be locked into a single AI provider. BY : ABRAHAM DAUD
+
+## CONTAC DEV
+## IG 
+'''
+@abraham_daud01
+'''
+## Gmail
+'''
+abrahamdaud511@gmail.com
+'''
