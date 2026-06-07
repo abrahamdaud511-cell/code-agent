@@ -1,0 +1,43 @@
+# Binaries
+codeagent
+codeagent.exe
+codeagent-*
+*.exe
+*.test
+*.out
+*.test.exe
+
+# Build output
+dist/
+build/
+release/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies
+vendor/
+
+# CodeAgent local data
+~/.local/share/codeagent/
+~/.config/codeagent/
+
+# Environment
+.env
+.env.local
+
+# Coverage
+coverage.out
+coverage.html
+
+# Temporary
+tmp/
+*.log
