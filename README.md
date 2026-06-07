@@ -10,30 +10,6 @@ CodeAgent is an open source AI coding agent that helps you write code in your te
 [![Go Version](https://img.shields.io/github/go-mod/go-version/anomalyco/codeagent)](go.mod)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-## Installation
-
-### macOS / Linux
-
-```bash
-# One-liner (recommended)
-curl -fsSL https://codeagent.ai/install | bash
-```
-
-### macOS (Homebrew)
-```bash
-brew tap anomalyco/tap
-brew install codeagent
-```
-
-### Linux (Arch Linux)
-```bash
-paru -S codeagent-bin
-```
-
-### Windows (PowerShell)
-```powershell
-iex (iwr "https://codeagent.ai/install.ps1").Content
-```
 
 ### npm / bun
 ```bash
