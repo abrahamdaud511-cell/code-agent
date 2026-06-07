@@ -1,0 +1,89 @@
+version: 2
+
+project_name: codeagent
+
+before:
+  hooks:
+    - go mod tidy
+    - go generate ./...
+
+builds:
+  - env:
+      - CGO_ENABLED=1
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    ignore:
+      - goos: windows
+        goarch: arm64
+    ldflags:
+      - -s -w -X codeagent/cli.Version={{.Version}}
+    tags:
+      - netgo
+      - sqlite_omit_load_extension
+
+archives:
+  - format: tar.gz
+    format_overrides:
+      - goos: windows
+        format: zip
+    name_template: >-
+      {{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}
+    files:
+      - README.md
+      - LICENSE
+      - AGENTS.md
+
+checksum:
+  name_template: "checksums.txt"
+
+snapshot:
+  name_template: "{{ incpatch .Version }}-next"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+
+release:
+  github:
+    owner: anomalyco
+    name: codeagent
+  draft: false
+  prerelease: auto
+
+brews:
+  - name: codeagent
+    repository:
+      owner: anomalyco
+      name: homebrew-tap
+    homepage: "https://codeagent.ai"
+    description: "The open source AI coding agent"
+    license: "MIT"
+    test: |
+      system "#{bin}/codeagent version"
+
+scoop:
+  bucket:
+    owner: anomalyco
+    name: scoop-bucket
+  homepage: "https://codeagent.ai"
+  description: "The open source AI coding agent"
+  license: "MIT"
+
+nfpms:
+  - maintainer: CodeAgent Team
+    description: "The open source AI coding agent"
+    homepage: "https://codeagent.ai"
+    license: "MIT"
+    formats:
+      - deb
+      - rpm
+      - apk
+    bindir: /usr/bin
