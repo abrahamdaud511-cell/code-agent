@@ -1,0 +1,17 @@
+{
+  "default_model": "openai/gpt-5",
+  "default_provider": "openai",
+  "theme": "catppuccin-mocha",
+  "log_level": "INFO",
+  "permissions": [
+    { "tool": "bash", "action": "ask" },
+    { "tool": "read", "action": "allow" },
+    { "tool": "write", "action": "ask" },
+    { "tool": "edit", "action": "ask" },
+    { "tool": "grep", "action": "allow" },
+    { "tool": "glob", "action": "allow" },
+    { "tool": "webfetch", "action": "allow" },
+    { "tool": "websearch", "action": "ask" },
+    { "tool": "question", "action": "allow" }
+  ]
+}
